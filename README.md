@@ -16,3 +16,4 @@ Line 3
 Testing git remote add
 Testing git push
 Testing upstream tracking
+Testing automatic upstream push
