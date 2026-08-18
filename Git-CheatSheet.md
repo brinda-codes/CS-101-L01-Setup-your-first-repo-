@@ -1401,3 +1401,149 @@ A --- B --- C'
 **Result**
 
 Git copied a commit from one branch to another without merging the entire branch.
+
+--
+
+## Add a Remote
+
+### Add another remote repository
+
+Command:
+
+```bash
+git remote add backup git@github.com:brinda-codes/CS-101-L01-Setup-your-first-repo-.git
+```
+
+Verify the remotes:
+
+```bash
+git remote -v
+```
+
+Output:
+
+```text
+backup  git@github.com:brinda-codes/CS-101-L01-Setup-your-first-repo-.git (fetch)
+backup  git@github.com:brinda-codes/CS-101-L01-Setup-your-first-repo-.git (push)
+origin  git@github.com:brinda-codes/CS-101-L01-Setup-your-first-repo-.git (fetch)
+origin  git@github.com:brinda-codes/CS-101-L01-Setup-your-first-repo-.git (push)
+```
+
+---
+
+## Push Your Changes
+
+### Push the main branch to origin
+
+Modify a file:
+
+```bash
+echo "Testing git remote add" >> README.md
+```
+
+Commit the change:
+
+```bash
+git add .
+git commit -m "Demonstrate git remote add"
+```
+
+Push the main branch:
+
+```bash
+git push origin main
+```
+
+---
+
+### Push a branch that has never been pushed before
+
+Create a new branch:
+
+```bash
+git switch -c upstream-demo
+```
+
+Modify a file:
+
+```bash
+echo "Testing upstream tracking" >> README.md
+```
+
+Commit the change:
+
+```bash
+git add .
+git commit -m "Demonstrate upstream tracking"
+```
+
+Push the branch and create an upstream tracking branch:
+
+```bash
+git push -u origin upstream-demo
+```
+
+Verify the tracking relationship:
+
+```bash
+git branch -vv
+```
+
+Output:
+
+```text
+* upstream-demo d92cffb [origin/upstream-demo] Demonstrate upstream tracking
+```
+
+---
+
+### Push to the current branch's tracking branch
+
+Modify a file:
+
+```bash
+echo "Testing automatic upstream push" >> README.md
+```
+
+Commit the change:
+
+```bash
+git add .
+git commit -m "Demonstrate git push with upstream"
+```
+
+Push without specifying a branch:
+
+```bash
+git push
+```
+
+Because the upstream branch was already configured with `-u`, Git automatically pushed the changes to `origin/upstream-demo`.
+
+---
+
+### Push tags
+
+Create a tag:
+
+```bash
+git tag v1.0
+```
+
+Verify the tag:
+
+```bash
+git tag
+```
+
+Output:
+
+```text
+v1.0
+```
+
+Push all tags:
+
+```bash
+git push --tags
+```
