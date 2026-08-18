@@ -1117,3 +1117,287 @@ git commit --amend
 **Result**
 
 The most recent commit was updated with the new changes.
+
+
+--
+
+
+---
+
+# Git Cheat Sheet Add-On: Branch History and Branch Integration
+
+## Explore History
+
+### 44. Look at a Branch's History
+
+**Command**
+
+```bash
+git log --oneline
+```
+
+**Example Scenario**
+
+I displayed the recent commit history of my repository.
+
+```bash
+git log --oneline -5
+```
+
+**Result**
+
+Git displayed the most recent commits in the repository.
+
+---
+
+### 45. Display the Commit Graph
+
+**Command**
+
+```bash
+git log --graph --oneline --decorate --all
+```
+
+**Example Scenario**
+
+I visualized the relationships between branches and commits.
+
+```bash
+git log --graph --oneline --decorate --all -10
+```
+
+**Result**
+
+Git displayed the commit graph, including all branches.
+
+---
+
+### 46. Show Every Commit That Modified a File
+
+**Command**
+
+```bash
+git log README.md
+```
+
+**Example Scenario**
+
+I displayed every commit that modified `README.md`.
+
+```bash
+git log README.md
+```
+
+**Result**
+
+Git listed every commit that changed the file.
+
+---
+
+### 47. Follow a File Across Renames
+
+**Command**
+
+```bash
+git log --follow README.md
+```
+
+**Example Scenario**
+
+I displayed the complete history of `README.md`, including any future renames.
+
+```bash
+git log --follow README.md
+```
+
+**Result**
+
+Git displayed the entire history of the file.
+
+---
+
+### 48. Search the Commit History for Specific Text
+
+**Command**
+
+```bash
+git log -G "banana"
+```
+
+**Example Scenario**
+
+I searched for commits containing the word `banana`.
+
+```bash
+git log -G "banana"
+```
+
+**Result**
+
+Git displayed commits that added or removed matching text.
+
+---
+
+### 49. Show Who Last Modified Each Line
+
+**Command**
+
+```bash
+git blame README.md
+```
+
+**Example Scenario**
+
+I displayed the author and commit responsible for each line in `README.md`.
+
+```bash
+git blame README.md
+```
+
+**Result**
+
+Git showed which commit last modified each line.
+
+---
+
+## Branch Integration
+
+### 50. Rebase a Branch
+
+**Command**
+
+```bash
+git switch banana
+git rebase main
+```
+
+**Example Scenario**
+
+I rebased the `banana` branch onto `main` and resolved a merge conflict in `README.md`.
+
+**Before**
+
+```text
+main:    A --- B
+               \
+banana:         C
+```
+
+**After**
+
+```text
+main:    A --- B
+                    \
+banana:              C'
+```
+
+**Result**
+
+The `banana` branch was replayed on top of `main`.
+
+---
+
+### 51. Merge Diverged Branches
+
+**Command**
+
+```bash
+git switch main
+git merge banana
+```
+
+**Example Scenario**
+
+I merged the `banana` branch into `main`.
+
+**Result**
+
+Git combined the histories of both branches.
+
+---
+
+### 52. Perform a Fast-Forward Merge
+
+**Command**
+
+```bash
+git merge ff-banana
+```
+
+**Before**
+
+```text
+A --- B
+         \
+          C --- D
+```
+
+**After**
+
+```text
+A --- B --- C --- D
+```
+
+**Result**
+
+Git moved the branch pointer forward without creating a merge commit.
+
+---
+
+### 53. Perform a Squash Merge
+
+**Command**
+
+```bash
+git merge --squash fruit
+```
+
+**Before**
+
+```text
+A --- B
+         \
+          C --- D
+```
+
+**After**
+
+```text
+A --- B --- E
+         \
+          C --- D
+```
+
+**Result**
+
+Git combined multiple commits into a single commit.
+
+---
+
+### 54. Copy a Commit with Cherry-Pick
+
+**Command**
+
+```bash
+git cherry-pick ac1c16b
+```
+
+**Before**
+
+```text
+A --- B
+         \
+          C
+```
+
+**After**
+
+```text
+A --- B --- C'
+         \
+          C
+```
+
+**Result**
+
+Git copied a commit from one branch to another without merging the entire branch.
