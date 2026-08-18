@@ -344,3 +344,220 @@ git status
 **Result**
 
 Git displayed the current branch and listed staged, unstaged, and untracked files.
+----
+
+---
+
+## Make Commits
+
+### 12. Make a Commit (Open the Editor)
+
+**Command**
+
+```bash
+git commit
+```
+
+**Example Scenario**
+
+I created a commit and wrote the commit message in the editor.
+
+```bash
+git commit
+```
+
+**Result**
+
+Git opened the default editor and created a new commit after I saved the message.
+
+---
+
+### 13. Make a Commit with a Message
+
+**Command**
+
+```bash
+git commit -m "message"
+```
+
+**Example Scenario**
+
+I committed my changes with an inline message.
+
+```bash
+git commit -m "Demonstrate git commit -m"
+```
+
+**Result**
+
+Git created a new commit with the specified message.
+
+---
+
+### 14. Commit All Modified Files
+
+**Command**
+
+```bash
+git commit -am "message"
+```
+
+**Example Scenario**
+
+I modified an existing tracked file and committed it without using `git add`.
+
+```bash
+echo "Additional notes" >> README.md
+
+git commit -am "Demonstrate git commit -am"
+```
+
+**Result**
+
+Git automatically staged the modified tracked files and created a commit.
+
+---
+
+## Move Between Branches
+
+### 15. Switch Branches
+
+**Command**
+
+```bash
+git switch <name>
+```
+
+**OR**
+
+```bash
+git checkout <name>
+```
+
+**Example Scenario**
+
+I switched from `practice-branch` to `main`.
+
+```bash
+git switch main
+```
+
+**Result**
+
+Git changed the active branch to `main`.
+
+---
+
+### 16. Create a Branch
+
+**Command**
+
+```bash
+git switch -c <name>
+```
+
+**OR**
+
+```bash
+git checkout -b <name>
+```
+
+**Example Scenario**
+
+I created a new branch called `documentation-branch`.
+
+```bash
+git switch -c documentation-branch
+```
+
+**Result**
+
+Git created a new branch and switched to it automatically.
+
+---
+
+### 17. List Branches
+
+**Command**
+
+```bash
+git branch
+```
+
+**Example Scenario**
+
+I displayed all local branches.
+
+```bash
+git branch
+```
+
+**Result**
+
+Git displayed all branches in the repository.
+
+---
+
+### 18. List Branches by Most Recent Commit
+
+**Command**
+
+```bash
+git branch --sort=-committerdate
+```
+
+**Example Scenario**
+
+I sorted branches according to their latest commits.
+
+```bash
+git branch --sort=-committerdate
+```
+
+**Result**
+
+Git displayed the most recently updated branch first.
+
+---
+
+### 19. Delete a Branch
+
+**Command**
+
+```bash
+git branch -d <name>
+```
+
+**Example Scenario**
+
+I deleted a branch after merging it into `main`.
+
+```bash
+git branch -d documentation-branch
+```
+
+**Result**
+
+The merged branch was removed.
+
+---
+
+### 20. Force Delete a Branch
+
+**Command**
+
+```bash
+git branch -D <name>
+```
+
+**Example Scenario**
+
+I deleted a branch that had not been merged.
+
+```bash
+git branch -D temporary-branch
+```
+
+**Result**
+
+Git deleted the branch even though it had not been merged.
