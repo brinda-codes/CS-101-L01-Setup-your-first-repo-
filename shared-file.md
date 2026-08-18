@@ -2,6 +2,7 @@ Line added by branch-a.
 
 # Shared File — edited by branch-c
 
+# Shared File — edited by branch-d
+
 Line added by branch-b.
 This file will be edited by two different branches to demonstrate a merge conflict.
-
