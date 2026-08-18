@@ -7,3 +7,4 @@ line 2
 Additional notes
 Testing git diff
 Line 1
+Line 2
