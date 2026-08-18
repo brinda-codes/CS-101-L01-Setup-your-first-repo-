@@ -561,3 +561,287 @@ git branch -D temporary-branch
 **Result**
 
 Git deleted the branch even though it had not been merged.
+
+---
+# Git Cheat Sheet Add-On: Diff Commands
+
+## Compare Changes
+
+### 21. Show All Staged and Unstaged Changes
+
+**Command**
+
+```bash
+git diff HEAD
+```
+
+**Example Scenario**
+
+I modified `README.md` and `Git-CheatSheet.md`. I staged one file and left the other unstaged.
+
+```bash
+echo "Updated README" >> README.md
+echo "Added diff notes" >> Git-CheatSheet.md
+
+git add Git-CheatSheet.md
+
+git diff HEAD
+```
+
+**Result**
+
+Git displayed all changes in the repository, including both staged and unstaged modifications.
+
+---
+
+### 22. Show Only Staged Changes
+
+**Command**
+
+```bash
+git diff --staged
+```
+
+**Example Scenario**
+
+I modified `README.md` and staged the file.
+
+```bash
+echo "Staged example" >> README.md
+
+git add README.md
+
+git diff --staged
+```
+
+**Result**
+
+Git displayed only the changes that had been added to the staging area.
+
+---
+
+### 23. Show Only Unstaged Changes
+
+**Command**
+
+```bash
+git diff
+```
+
+**Example Scenario**
+
+I modified `README.md` but did not stage the changes.
+
+```bash
+echo "Unstaged example" >> README.md
+
+git diff
+```
+
+**Result**
+
+Git displayed only the changes that had not yet been staged.
+
+---
+
+## Compare Commits
+
+### 24. Show the Difference Between a Commit and Its Parent
+
+**Command**
+
+```bash
+git show <commit>
+```
+
+**Example Scenario**
+
+I displayed the changes introduced by the most recent commit.
+
+```bash
+git show HEAD
+```
+
+**Result**
+
+Git displayed the commit information and the changes included in that commit.
+
+---
+
+### 25. Compare Two Commits
+
+**Command**
+
+```bash
+git diff <commit> <commit>
+```
+
+**Example Scenario**
+
+I compared the current commit with the previous commit.
+
+```bash
+git diff HEAD~1 HEAD
+```
+
+**Result**
+
+Git displayed the differences between the two commits.
+
+---
+
+### 26. Compare One File Since a Specific Commit
+
+**Command**
+
+```bash
+git diff <commit> <file>
+```
+
+**Example Scenario**
+
+I compared `README.md` with the version stored in the previous commit.
+
+```bash
+git diff HEAD~1 README.md
+```
+
+**Result**
+
+Git displayed only the changes made to `README.md`.
+
+---
+
+### 27. Show a Summary of a Diff
+
+**Command**
+
+```bash
+git diff <commit> --stat
+```
+
+**Example Scenario**
+
+I displayed a summary of all changes since the latest commit.
+
+```bash
+git diff HEAD --stat
+```
+
+**Result**
+
+Git displayed the modified files and the number of insertions and deletions.
+
+---
+
+### 28. Show a Summary of Changes in a Commit
+
+**Command**
+
+```bash
+git show <commit> --stat
+```
+
+**Example Scenario**
+
+I displayed a summary of the latest commit.
+
+```bash
+git show HEAD --stat
+```
+
+**Result**
+
+Git displayed the commit details and a statistical summary of the changes.
+
+---
+
+## Ways to Refer to a Commit
+
+### 29. Use a Branch Name
+
+**Example**
+
+```bash
+git diff main
+```
+
+**Result**
+
+Git compared the current working tree with the `main` branch.
+
+---
+
+### 30. Use a Tag
+
+**Example**
+
+```bash
+git diff v0.1
+```
+
+**Result**
+
+Git compared the current working tree with the `v0.1` tag.
+
+---
+
+### 31. Use a Commit ID
+
+**Example**
+
+```bash
+git diff 3e887ab
+```
+
+**Result**
+
+Git compared the current working tree with the specified commit.
+
+---
+
+### 32. Use a Remote Branch
+
+**Example**
+
+```bash
+git diff origin/main
+```
+
+**Result**
+
+Git compared the current working tree with the remote `main` branch.
+
+---
+
+### 33. Use `HEAD`
+
+**Example**
+
+```bash
+git diff HEAD
+```
+
+**Result**
+
+Git compared the current working tree with the latest commit.
+
+---
+
+### 34. Refer to Earlier Commits
+
+**Example**
+
+```bash
+git diff HEAD~3
+```
+
+**OR**
+
+```bash
+git diff HEAD^^^
+```
+
+**Result**
+
+Git compared the current working tree with the commit from three revisions earlier.
