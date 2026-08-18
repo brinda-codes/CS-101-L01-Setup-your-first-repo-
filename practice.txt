@@ -1,1 +1,3 @@
 Initial content
+Reset example
+Another line
