@@ -1,3 +1,4 @@
 Initial content
 Reset example
 Another line
+Stash example
