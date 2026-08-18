@@ -15,3 +15,4 @@ Line 2
 Line 3
 Testing git remote add
 Testing git push
+Testing upstream tracking
