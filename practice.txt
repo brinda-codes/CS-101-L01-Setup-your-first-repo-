@@ -2,3 +2,5 @@ Initial content
 Reset example
 Another line
 Stash example
+Reset commit example
+Amend example
