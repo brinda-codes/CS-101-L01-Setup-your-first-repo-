@@ -1,4 +1,4 @@
-# My Git Notes
+Added this line on the banana branch.# My Git Notes
 ## Branching Example
 
 ## Git Branching Example
