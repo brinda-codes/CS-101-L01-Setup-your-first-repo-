@@ -1547,3 +1547,171 @@ Push all tags:
 ```bash
 git push --tags
 ```
+
+
+--
+
+## Pull Changes
+
+### Fetch changes without modifying the current branch
+
+Command:
+
+```bash
+git fetch origin main
+```
+
+What it does:
+
+Downloads the latest changes from the remote repository without merging them into the current branch.
+
+Output:
+
+```bash
+From github.com:brinda-codes/CS-101-L01-Setup-your-first-repo-
+ * branch            main -> FETCH_HEAD
+```
+
+---
+
+### Fetch and merge changes
+
+Command:
+
+```bash
+git pull origin main
+```
+
+What it does:
+
+Downloads and merges changes from the remote repository into the current branch.
+
+Output:
+
+```bash
+Already up to date.
+```
+
+---
+
+### Pull using the branch's upstream tracking information
+
+Command:
+
+```bash
+git pull
+```
+
+What it does:
+
+Fetches and merges changes from the remote branch that is being tracked automatically.
+
+Output:
+
+```bash
+Already up to date.
+```
+
+---
+
+## Configure Git
+
+### View the local Git configuration file
+
+Command:
+
+```bash
+cat .git/config
+```
+
+What it does:
+
+Displays the repository-specific Git configuration.
+
+---
+
+### View the global Git configuration file
+
+Command:
+
+```bash
+cat ~/.gitconfig
+```
+
+What it does:
+
+Displays the global Git configuration.
+
+---
+
+### Display the configured username
+
+Command:
+
+```bash
+git config user.name
+```
+
+---
+
+### Display the configured email address
+
+Command:
+
+```bash
+git config user.email
+```
+
+---
+
+### Display all Git configuration settings
+
+Command:
+
+```bash
+git config --list
+```
+
+---
+
+## Important Files
+
+### Local Git configuration
+
+File:
+
+```text
+.git/config
+```
+
+Purpose:
+
+Stores repository-specific Git settings.
+
+---
+
+### Global Git configuration
+
+File:
+
+```text
+~/.gitconfig
+```
+
+Purpose:
+
+Stores user-wide Git settings.
+
+---
+
+### Git ignore file
+
+File:
+
+```text
+.gitignore
+```
+
+Purpose:
+
+Specifies files and directories that Git should ignore.
