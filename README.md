@@ -4,3 +4,4 @@
 ## Git Branching Example
 line 1
 line 2
+Additional notes
