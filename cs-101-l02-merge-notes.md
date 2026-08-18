@@ -1,3 +1,4 @@
+
 # CS-101 L02 — Working with a Team on Git
 
 ## Task 1: Isolated branch work
